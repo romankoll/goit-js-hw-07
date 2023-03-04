@@ -2,7 +2,7 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 console.log(galleryItems);
 
-const gallerySectionEll = document.querySelectorAll(".gallery");
+const gallerySectionEll = document.querySelector(".gallery");
 gallerySectionEll.addEventListener("click", handleImgClick);
 
 function createGallary(obj) {
