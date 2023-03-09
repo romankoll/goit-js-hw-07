@@ -5,8 +5,6 @@ console.log(galleryItems);
 
 const gallerySectionEll = document.querySelector(".gallery");
 
-gallerySectionEll.addEventListener("click", handleImgClick);
-
 function createGallary(obj) {
   return obj.map(
     (ell) => `
@@ -26,16 +24,19 @@ gallerySectionEll.insertAdjacentHTML("beforeend", addGalleryItemsList);
 
 /* options */
 
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionsDelay: 250,
+  overlayOpacity: 0.1,
+  howCounter: true,
+});
+
 function handleImgClick(event) {
   event.preventDefault();
 
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionsDelay: 250,
-    overlayOpacity: 0.1,
-    howCounter: true,
-  });
 }
+
+gallerySectionEll.addEventListener("click", handleImgClick);
